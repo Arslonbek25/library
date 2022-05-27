@@ -10,6 +10,7 @@ const path = require("path");
 // Routes
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/authors");
+const bookRouter = require("./routes/books");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -22,10 +23,11 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DATABASE_URL);
 const db = mongoose.connection;
-db.on("error", (err) => console.log(err));
+db.on("error", err => console.log(err));
 db.once("open", () => console.log("Connected to Mongoose"));
 
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
 
 app.listen(process.env.PORT || 3000);
