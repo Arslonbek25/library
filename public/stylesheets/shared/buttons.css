@@ -36,7 +36,7 @@
 }
 
 .btn-primary:hover {
-	background: var(--color-btn-danger-background-dark);
+	background: var(--color-btn-primary-background-dark);
 	color: var(--color-btn-danger-text-dark);
 }
 

@@ -1,6 +1,7 @@
 @import "shared/variables.css";
 @import "shared/header.css";
 @import "shared/buttons.css";
+@import "shared/form.css";
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 
 :root {
